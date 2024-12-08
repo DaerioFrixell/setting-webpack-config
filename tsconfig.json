@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ESNext", // Цель компиляции
-    "strict": true, // Включаем строгий режим
-    "esModuleInterop": true, // Позволяет импортировать модули CommonJS
-    "skipLibCheck": true, // Пропускаем проверку библиотек
-    "forceConsistentCasingInFileNames": true // Убедитесь, что файлы правильно регистры
+    "target": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": ["src/**/*.ts"], // Включаем все файлы с расширением .ts в папке src
-  "exclude": ["node_modules"] // Исключаем папку node_modules
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }

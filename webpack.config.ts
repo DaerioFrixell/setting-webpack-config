@@ -1,5 +1,6 @@
 import path from "path";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 module.exports = {
   entry: "./src/index.ts",
@@ -14,9 +15,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', "@babel/preset-typescript"]
+            }
+          },
+          {
+            loader: "ts-loader",
+            options: {
+              transpileOnly: true, // Отключает проверку типов в ts-loader
+            },
+          },
+        ]
       },
     ],
   },
@@ -33,5 +47,6 @@ module.exports = {
       template: "./public/index.html",
       filename: "index.html",
     }),
+    new ForkTsCheckerWebpackPlugin(),
   ],
 };
