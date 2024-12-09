@@ -1,16 +1,22 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
-    }
-  },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+        "target": "ESNext",
+        "jsx": "react-jsx",
+        "moduleResolution": "node",
+        "baseUrl": "./",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "paths": {
+            "shared/*": ["src/shared/*"]
+        }
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
 }
