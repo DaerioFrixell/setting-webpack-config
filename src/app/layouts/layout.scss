@@ -1,0 +1,20 @@
+.layout {
+    font-size: 1.6rem;
+
+    &__header {
+        height: 8vh;
+        min-height: 20px;
+        background: gray;
+    }
+
+    &__wrapper-content {
+        display: grid;
+        grid-template-columns: 50px auto;
+
+        &__sidebar {
+            height: 92vh;
+            min-height: calc(92vh - 20px);
+            background: rgb(220, 210, 210);
+        }
+    }
+}
