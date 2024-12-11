@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import { NavLink } from "react-router";
 import './layout.scss';
 
 type LayoutProps = {
@@ -9,7 +10,13 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
     return (
         <div className="layout">
             <header className="layout__header">
-                header
+                <NavLink to='/'>
+                    Главная
+                </NavLink>
+
+                <NavLink to='/info'>
+                    Информация
+                </NavLink>
             </header>
 
             <div className="layout__wrapper-content">
