@@ -17,6 +17,10 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
                 <NavLink to='/info'>
                     Информация
                 </NavLink>
+
+                <NavLink to='/async'>
+                    Асинхрон
+                </NavLink>
             </header>
 
             <div className="layout__wrapper-content">

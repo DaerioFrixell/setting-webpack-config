@@ -1,3 +1,4 @@
+import { AsyncPage } from "pages/async-page";
 import { HomePage, InfoPage } from "pages/index";
 import { ReactNode } from "react";
 
@@ -14,5 +15,9 @@ export const routingSetting: RoutingSetting = [
     {
         path: '/info',
         element: <InfoPage />
+    },
+    {
+        path: '/async',
+        element: <AsyncPage />
     },
 ];
