@@ -1,12 +1,11 @@
 import { Title } from 'shared/ui-kit/ui/title';
 import { Anchor } from 'shared/ui-kit/ui/anchor';
-import { useLinks } from './hooks';
+import { loaderList, plaginList, stackList } from './static';
+import { Tag } from 'shared/ui-kit/ui/tag';
 
 import './infoPage.scss';
 
 export const InfoPage = () => {
-    const { stackLinks } = useLinks();
-
     return (
         <div>
             <Title text='Информация по проекту' />
@@ -14,7 +13,7 @@ export const InfoPage = () => {
                 <Title text='Стек' />
 
                 <div className='info-page-links'>
-                    {stackLinks.map(stack =>
+                    {stackList.map(stack =>
                         <Anchor
                             href={stack.href}
                             text={`${stack.title} ${stack.version}`}
@@ -26,30 +25,51 @@ export const InfoPage = () => {
             <div>
                 <Title text='Сборка' />
 
-                <div>
-                    <span>В качестве бандлера используется Webpack 5.97 версии + Webpack-Dev-Server</span>
+                <div className='info-text'>
+                    <p>
+                        В качестве бандлера используется
+                        <Tag text='Webpack' />
+                        версии +
+                        <Tag text='Webpack-Dev-Server 5.1.0' /> версии.
+                    </p>
 
-                    <span>TypeScript компилируется через Babel. Проверка типов делается через ts-loader</span>
+                    <p>
+                        TypeScript компилируется через
+                        <Tag text='Babel' />
+                        .
+                    </p>
 
-                    <div>
-                        <span>Подключены следующиее лоадеры:</span>
-                        <span>ts-node 10</span>
-                        <span>ts-loader 9</span>
-                        <span>babel-loader 9</span>
-                        <span>sass-loader 16</span>
-                        <span>css-loader 7</span>
-                        <span>style-loader 4</span>
-                    </div>
+                    <p>
+                        Проверка типов делается через
+                        <Tag text='ts-loader' />
+                        .
+                    </p>
+                </div>
+            </div>
 
-                    <div>
-                        <span>Подключены следующиее плагины:</span>
-                        <span>html-webpack-plugin 5</span>
-                        <span>fork-ts-checker-webpack-plugin 9</span>
-                        <span>babel-loader 9</span>
-                        <span>sass-loader 16</span>
-                        <span>css-loader 7</span>
-                        <span>style-loader 4</span>
-                    </div>
+            <div >
+                <Title text='Подключены следующиее лоадеры:' />
+
+                <div className='info-page-links'>
+                    {loaderList.map(loader =>
+                        <Anchor
+                            href={loader.links.webpack}
+                            text={`${loader.title} ${loader.version}`}
+                        />
+                    )}
+                </div>
+            </div>
+
+            <div>
+                <Title text='Подключены следующиее плагины:' />
+
+                <div className='info-page-links'>
+                    {plaginList.map(plugin =>
+                        <Anchor
+                            href={plugin.links.github}
+                            text={`${plugin.title} ${plugin.version}`}
+                        />
+                    )}
                 </div>
             </div>
         </div>
