@@ -20,7 +20,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.m?tsx$/,
+                test: /\.(ts|tsx)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: [
                     {
