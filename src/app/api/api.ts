@@ -2,7 +2,7 @@
 
 import axios from "axios";
 
-export const baseUrl = `https://swapi.dev/api/`;
+export const baseUrl = `https://datausa.io/api/`;
 
 export const axiosInstanse = axios.create({
     baseURL: baseUrl,

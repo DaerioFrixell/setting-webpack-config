@@ -1,11 +1,11 @@
-import { axiosInstanse, baseUrl } from "app/api/api"
-import { useEffect, useState } from "react"
+import { axiosInstanse } from "app/api/api";
+import { useEffect, useState } from "react";
 
 export const AsyncPage = () => {
     const [data, setData] = useState<any[] | null>(null);
 
     useEffect(() => {
-        axiosInstanse.get(`${baseUrl}/people`).then(res => setData(res.data.results))
+        axiosInstanse.get(`data?drilldowns=Nation&measures=Population`).then(res => setData(res.data.data))
     }, [])
 
     if (!data) return <h2>loading....</h2>;
@@ -14,9 +14,15 @@ export const AsyncPage = () => {
         <div>
             <h2>name of people:</h2>
 
-            {data.map(el => {
-                return <p key={el.name}>{el.name}</p>
+            {data.slice(0, 5).map(el => {
+                return (
+                    <div style={{ marginBottom: 20 }}>
+                        <p key={el.Nation}>{el.Nation}</p>
+                        <p>год: {el.Year}</p>
+                        <p>численность населения: {el.Population}</p>
+                    </div>
+                );
             })}
         </div>
-    )
-}
+    );
+};
