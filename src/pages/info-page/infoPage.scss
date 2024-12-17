@@ -1,3 +1,18 @@
+.info {
+    margin: 10px 40px;
+
+    &__block {
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 16px;
+
+        &:hover {
+            background-color: rgb(249, 247, 247);
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+    }
+}
+
 .info-page-links {
     display: flex;
     flex-direction: column;

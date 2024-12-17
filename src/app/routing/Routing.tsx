@@ -9,6 +9,7 @@ export const Routing = () => {
             <Routes>
                 {routingSetting.map(route =>
                     <Route
+                        key={route.path}
                         path={route.path}
                         element={route.element}
                     />

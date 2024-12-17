@@ -6,21 +6,34 @@ type LayoutProps = {
     children: ReactNode
 };
 
+const navSetting = [
+    {
+        to: '/',
+        title: 'Главная',
+    },
+    {
+        to: '/about',
+        title: 'О проекте',
+    },
+    {
+        to: '/async',
+        title: 'Асинхрон',
+    },
+]
+
 export const Layout: FC<LayoutProps> = ({ children }) => {
     return (
         <div className="layout">
             <header className="layout__header">
-                <NavLink to='/'>
-                    Главная
-                </NavLink>
-
-                <NavLink to='/info'>
-                    Информация
-                </NavLink>
-
-                <NavLink to='/async'>
-                    Асинхрон
-                </NavLink>
+                {navSetting.map(nav =>
+                    <NavLink to={nav.to} key={nav.to} className={({ isActive }) =>
+                        [
+                            'layout__header__default',
+                            isActive ? "layout__header__active" : "",
+                        ].join(" ")
+                    }>
+                        {nav.title}
+                    </NavLink>)}
             </header>
 
             <div className="layout__wrapper-content">
