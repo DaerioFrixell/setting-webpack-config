@@ -1,5 +1,6 @@
 import { axiosInstanse } from "app/api/api";
 import { useEffect, useState } from "react";
+import './asyncPage.scss';
 
 export const AsyncPage = () => {
     const [data, setData] = useState<any[] | null>(null);
@@ -11,7 +12,7 @@ export const AsyncPage = () => {
     if (!data) return <h2>loading....</h2>;
 
     return (
-        <div>
+        <div className="async">
             <h2>name of people:</h2>
 
             {data.slice(0, 5).map(el => {

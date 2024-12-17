@@ -26,7 +26,7 @@ export const routingSetting: RoutingSetting = [
         element: <HomePage />
     },
     {
-        path: '/info',
+        path: '/about',
         element: <AsyncInfoPage />
     },
     {
