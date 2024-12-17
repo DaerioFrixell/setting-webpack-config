@@ -1,7 +1,9 @@
+import "./homePage.scss";
+
 export const HomePage = () => {
-    return (<div>
-
-        <p>home</p>
-
-    </div>)
-}
+    return (
+        <div className="home">
+            <p>Темплейт проекта со стеком: React, TypeScript, Webpack</p>
+        </div>
+    );
+};

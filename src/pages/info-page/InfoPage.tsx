@@ -39,13 +39,16 @@ export const InfoPage = () => {
                     <p>
                         TypeScript компилируется через
                         <Tag text='Babel' />
-                        .
                     </p>
 
                     <p>
                         Проверка типов делается через
                         <Tag text='ts-loader' />
-                        .
+                    </p>
+
+                    <p>
+                        Подгрузка чанков с помощью
+                        <Tag text='React.Lazy' />
                     </p>
                 </div>
             </div>
